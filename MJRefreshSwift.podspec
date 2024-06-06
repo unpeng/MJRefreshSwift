@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MJRefreshSwift"
-  s.version      = "1.5.4"
+  s.version      = "1.5.5"
   s.summary      = "MJRefreshSwift is MJRefresh-swift"
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   MJRefreshSwift is MJRefresh-swift, forked JRefresh
                    DESC
 
-  s.homepage     = "https://github.com/unpeng/Refresh"
+  s.homepage     = "https://github.com/unpeng/MJRefreshSwift"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/unpeng/Refresh.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/unpeng/MJRefreshSwift.git", :tag => "#{s.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
