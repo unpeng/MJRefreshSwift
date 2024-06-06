@@ -1,4 +1,7 @@
 # MJRefreshSwift
+
+[![CocoaPods](https://img.shields.io/cocoapods/v/MJRefreshSwift.svg)](http://cocoadocs.org/docsets/MJRefreshSwift)
+[![Github tag](https://img.shields.io/github/tag/unpeng/MJRefreshSwift.svg)]()
 ### 介绍
 这是MJRefresh的swift版本，先OC原版奉上[MJRefresh](https://github.com/CoderMJLee/MJRefresh),JRefresh为纯Swift版本，支持swift3.2以上，iOS8.0以上版本。代码逻辑和MJRefresh基本一模一样，本来一开始打算用swift的面向协议思想改写的，发现行不通只好用原作者一模一样的继承思想翻译成Swift。JRefresh剔除了原有的过期方法，也没有Selector调用方法（不想再混入OC文件，swift不支持objc_msgSend）,只剩下闭包调用。
 ### 为何写这个
