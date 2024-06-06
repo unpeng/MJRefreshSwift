@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MJRefreshSwift"
-  s.version      = "1.5.5"
+  s.version      = "1.5.6"
   s.summary      = "MJRefreshSwift is MJRefresh-swift"
 
   # This description is used to generate tags and improve search results.
@@ -83,7 +83,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "JRefresh/**/*.{h,swift}"
+  s.source_files  = "MJRefreshSwift/**/*.{h,swift}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -98,7 +98,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "JRefresh/*.{bundle, png}"
+  s.resources = "MJRefreshSwift/*.{bundle, png}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
