@@ -18,7 +18,7 @@ public extension Bundle {
     }
 
     static var normalModule: Bundle? = {
-        let bundleName = "JRefresh"
+        let bundleName = "MJRefreshSwift"
 
         var candidates = [
             // Bundle should be present here when the package is linked into an App.
@@ -47,7 +47,7 @@ public extension Bundle {
     }()
     
     static var spmModule: Bundle? = {
-        let bundleName = "MJRefreshSwift_JRefresh"
+        let bundleName = "MJRefreshSwift_MJRefreshSwift"
 
         let candidates = [
             // Bundle should be present here when the package is linked into an App.
@@ -63,7 +63,7 @@ public extension Bundle {
         for candidate in candidates {
             let bundlePath = candidate?.appendingPathComponent(bundleName + ".bundle")
             if let bundle = bundlePath.flatMap(Bundle.init(url:)),
-               let path = bundle.path(forResource: "JRefresh", ofType: "bundle"),
+               let path = bundle.path(forResource: "MJRefreshSwift", ofType: "bundle"),
                let mainBundle = Bundle(path: path) {
                 print("JR.spm:\(mainBundle.bundleURL)")
                 return mainBundle

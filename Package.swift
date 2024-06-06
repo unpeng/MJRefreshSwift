@@ -8,15 +8,15 @@ let package = Package(
     platforms: [.iOS(.v10)],
     products: [
         .library(
-            name: "JRefresh",
-            targets: ["JRefresh"]),
+            name: "MJRefreshSwift",
+            targets: ["MJRefreshSwift"]),
     ],
     targets: [
         .target(
-            name: "JRefresh",
-            path: "JRefresh",
+            name: "MJRefreshSwift",
+            path: "MJRefreshSwift",
             resources: [
-                .process("JRefresh.bundle")
+                .process("MJRefreshSwift.bundle")
             ]
         ),
     ]
