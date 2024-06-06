@@ -38,11 +38,13 @@ public extension Bundle {
 
         for candidate in candidates {
             let bundlePath = candidate?.appendingPathComponent(bundleName + ".bundle")
+            print("JR.nor:\(bundlePath)")
             if let bundle = bundlePath.flatMap(Bundle.init(url:)) {
                 print("JR.nor:\(bundle.bundleURL)")
                 return bundle
             }
         }
+        print("JR.nor:nil")
         return nil
     }()
     
@@ -62,6 +64,7 @@ public extension Bundle {
 
         for candidate in candidates {
             let bundlePath = candidate?.appendingPathComponent(bundleName + ".bundle")
+            print("JR.spm:\(bundlePath)")
             if let bundle = bundlePath.flatMap(Bundle.init(url:)),
                let path = bundle.path(forResource: "MJRefreshSwift", ofType: "bundle"),
                let mainBundle = Bundle(path: path) {
@@ -69,6 +72,7 @@ public extension Bundle {
                 return mainBundle
             }
         }
+        print("JR.spm:nil")
         return nil
     }()
 
