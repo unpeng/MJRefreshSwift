@@ -46,7 +46,7 @@ public extension Bundle {
         }
         
         var associateBundleURL:URL? = Bundle.main.url(forResource:"Frameworks", withExtension: nil)
-        associateBundleURL = associateBundleURL?.appendingPathComponent(podName)
+        associateBundleURL = associateBundleURL?.appendingPathComponent(bundleName)
         associateBundleURL = associateBundleURL?.appendingPathExtension("framework")
         if associateBundleURL != nil,let associateBunle = Bundle.init(url: associateBundleURL!) {
             let bundlePath = associateBunle.url(forResource: bundleName, withExtension: "bundle")
