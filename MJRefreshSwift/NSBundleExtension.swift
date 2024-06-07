@@ -45,16 +45,16 @@ public extension Bundle {
             }
         }
         
-        var associateBundleURL:URL? = Bundle.main.url(forResource:"Frameworks", withExtension: nil)
-        associateBundleURL = associateBundleURL?.appendingPathComponent(bundleName)
-        associateBundleURL = associateBundleURL?.appendingPathExtension("framework")
-        if associateBundleURL != nil,let associateBunle = Bundle.init(url: associateBundleURL!) {
-            let bundlePath = associateBunle.url(forResource: bundleName, withExtension: "bundle")
-            if let bundle = Bundle.init(url: bundlePath) {
-                debugPrint("JR.nor.Framework:\(bundlePath)")
-                return bundle
-            }
-        }
+//        var associateBundleURL:URL? = Bundle.main.url(forResource:"Frameworks", withExtension: nil)
+//        associateBundleURL = associateBundleURL?.appendingPathComponent(bundleName)
+//        associateBundleURL = associateBundleURL?.appendingPathExtension("framework")
+//        if associateBundleURL != nil,let associateBunle = Bundle.init(url: associateBundleURL!) {
+//            let bundlePath = associateBunle.url(forResource: bundleName, withExtension: "bundle")
+//            if let bundle = Bundle.init(url: bundlePath) {
+//                debugPrint("JR.nor.Framework:\(bundlePath)")
+//                return bundle
+//            }
+//        }
         
         print("JR.nor:nil")
         return nil
