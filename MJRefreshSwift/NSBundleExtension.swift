@@ -12,14 +12,14 @@ private class BundleFinder {}
 
 public extension Bundle {
     public class func refreshBunle() -> Bundle {
-        
+        debugPrint("JR.Bunle:0")
         return normalModule ?? spmModule ?? Bundle.main
          
     }
 
     static var normalModule: Bundle? = {
         let bundleName = "MJRefreshSwift"
-
+        debugPrint("JR.nor:0")
         var candidates = [
             // Bundle should be present here when the package is linked into an App.
             Bundle.main.resourceURL,
@@ -38,19 +38,31 @@ public extension Bundle {
 
         for candidate in candidates {
             let bundlePath = candidate?.appendingPathComponent(bundleName + ".bundle")
-            print("JR.nor:\(bundlePath)")
+            debugPrint("JR.nor:\(bundlePath)")
             if let bundle = bundlePath.flatMap(Bundle.init(url:)) {
-                print("JR.nor:\(bundle.bundleURL)")
+                debugPrint("JR.nor:\(bundle.bundleURL)")
                 return bundle
             }
         }
+        
+        var associateBundleURL:URL? = Bundle.main.url(forResource:"Frameworks", withExtension: nil)
+        associateBundleURL = associateBundleURL?.appendingPathComponent(podName)
+        associateBundleURL = associateBundleURL?.appendingPathExtension("framework")
+        if associateBundleURL != nil,let associateBunle = Bundle.init(url: associateBundleURL!) {
+            let bundlePath = associateBunle.url(forResource: bundleName, withExtension: "bundle")
+            if let bundle = Bundle.init(url: bundlePath) {
+                debugPrint("JR.nor.Framework:\(bundlePath)")
+                return bundle
+            }
+        }
+        
         print("JR.nor:nil")
         return nil
     }()
     
     static var spmModule: Bundle? = {
         let bundleName = "MJRefreshSwift_MJRefreshSwift"
-
+        debugPrint("JR.spm:0")
         let candidates = [
             // Bundle should be present here when the package is linked into an App.
             Bundle.main.resourceURL,
@@ -64,15 +76,15 @@ public extension Bundle {
 
         for candidate in candidates {
             let bundlePath = candidate?.appendingPathComponent(bundleName + ".bundle")
-            print("JR.spm:\(bundlePath)")
+            debugPrint("JR.spm:\(bundlePath)")
             if let bundle = bundlePath.flatMap(Bundle.init(url:)),
                let path = bundle.path(forResource: "MJRefreshSwift", ofType: "bundle"),
                let mainBundle = Bundle(path: path) {
-                print("JR.spm:\(mainBundle.bundleURL)")
+                debugPrint("JR.spm:\(mainBundle.bundleURL)")
                 return mainBundle
             }
         }
-        print("JR.spm:nil")
+        debugPrint("JR.spm:nil")
         return nil
     }()
 
