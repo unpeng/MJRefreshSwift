@@ -28,7 +28,11 @@ public extension Bundle {
             Bundle(for: JRefreshComponent.self).resourceURL,
             
             // For command-line tools.
-            Bundle.main.bundleURL
+            Bundle.main.bundleURL,
+            
+            Bundle.main.bundleURL.appendingPathComponent("Frameworks"),
+            
+            Bundle.main.url(forResource:"Frameworks", withExtension: nil)
         ]
         
 
