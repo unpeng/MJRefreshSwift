@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MJRefreshSwift"
-  s.version      = "1.5.12"
+  s.version      = "1.5.13"
   s.summary      = "MJRefreshSwift is MJRefresh-swift"
 
   # This description is used to generate tags and improve search results.
