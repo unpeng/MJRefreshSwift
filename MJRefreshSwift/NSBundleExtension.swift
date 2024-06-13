@@ -30,10 +30,14 @@ public extension Bundle {
             // For command-line tools.
             Bundle.main.bundleURL,
             
-            Bundle(for: JRefreshComponent.self).resourceURL?.deletingLastPathComponent().appendingPathComponent(bundleName + ".framework")
+            //Bundle(for: JRefreshComponent.self).resourceURL?.deletingLastPathComponent().appendingPathComponent(bundleName + ".framework")
         ]
         
-
+        #if SWIFT_PACKAGE
+            // For SWIFT_PACKAGE.
+            candidates.append(Bundle.module.bundleURL)
+        #endif
+        
         for candidate in candidates {
             let bundlePath = candidate?.appendingPathComponent(bundleName + ".bundle")
             debugPrint("JR.nor:\(bundlePath)")
